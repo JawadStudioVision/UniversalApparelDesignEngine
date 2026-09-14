@@ -81,3 +81,30 @@ class CommercialLifecycleMiner:
 
         print(f"[Lifecycle Miner] Successfully audited {len(sales_by_code)} active earning SKUs.")
         return sales_by_code
+
+    def get_publishing_status(self, staged_dir: Path, published_dir: Path) -> dict:
+        """
+        Scans staging and UsedOnWebsite folders to determine which designs
+        are staged for upload vs already published live on the web store.
+        """
+        staged_files = list(staged_dir.glob("*.png")) if staged_dir.exists() else []
+        published_files = list(published_dir.glob("*.png")) if published_dir.exists() else []
+
+        staged_codes = {}
+        for f in staged_files:
+            match = re.search(r'\b([A-Z]{1,2}\d{2,3})\b', f.stem)
+            if match:
+                staged_codes[match.group(1)] = f.name
+
+        published_codes = {}
+        for f in published_files:
+            match = re.search(r'\b([A-Z]{1,2}\d{2,3})\b', f.stem)
+            if match:
+                published_codes[match.group(1)] = f.name
+
+        return {
+            "staged_count": len(staged_files),
+            "published_count": len(published_files),
+            "staged": staged_codes,
+            "published": published_codes
+        }
