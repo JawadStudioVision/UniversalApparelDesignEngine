@@ -53,5 +53,8 @@
         "A delicate porcelain teacup overflowing with floral vines"
       ]
     }
+  ],
+  "forbidden_themes": [
+    "violence", "burn", "burning", "fire", "dagger", "sword", "weapon", "blood", "kill", "destroy", "aggression", "war"
   ]
 }

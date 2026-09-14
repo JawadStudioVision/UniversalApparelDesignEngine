@@ -39,6 +39,13 @@ class SelfPromptImprovementEngine:
         max_possible = sum(self.CRITERIA_WEIGHTS.values())
         feedback = []
 
+        # 0. Strict Non-Violence & No Weapons Policy
+        forbidden = self.niche_config.get("forbidden_themes", ["violence", "burn", "burning", "dagger", "sword", "weapon", "blood", "kill", "destroy"])
+        found_forbidden = [w for w in forbidden if w in prompt_lower]
+        if found_forbidden:
+            feedback.append(f"VIOLATION: Prompt contains forbidden violent/weapon words: {found_forbidden}. Only peaceful, tender, slow-burn romantic phrases permitted.")
+            return {"score": 0.0, "passed": False, "feedback": feedback}
+
         # 1. Rule of One
         if any(w in prompt_lower for w in ["single", "centered", "one", "delicate", "isolated"]):
             score += self.CRITERIA_WEIGHTS["rule_of_one"]
