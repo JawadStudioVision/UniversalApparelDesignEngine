@@ -20,6 +20,11 @@ if not os.environ.get("OPENROUTER_API_KEY"):
     load_dotenv(PROJECT_ROOT.parent.parent / "YearningClubAutomationTShirt" / ".env")
 
 class Settings:
+    DATA_DIR = DATA_DIR
+    EXPORTS_DIR = EXPORTS_DIR
+    CONFIG_DIR = CONFIG_DIR
+    PROJECT_ROOT = PROJECT_ROOT
+
     # API Configurations
     OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
     DEFAULT_MODEL: str = os.getenv("DEFAULT_IMAGE_MODEL", "openai/gpt-5.4-image-2")
