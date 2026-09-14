@@ -1,0 +1,71 @@
+﻿{
+  "niche_id": "christmas",
+  "niche_name": "Christmas & Holiday Graphic Apparel",
+  "brand_name": "Kringle",
+  "brand_tagline": "Vintage Holiday Apparel & Christmas Merch",
+  "visual_style": "Vintage retro mid-century holiday illustration, hand-drawn distressed festive vector art, classic storybook Christmas woodcut engraving, bold clean outlines, high contrast, zero blurry gradients",
+  "colorways": {
+    "dark": {
+      "ink_palette": "Vibrant festive holiday red, emerald evergreen pine, warm antique gold, crisp snowflake white",
+      "background": "Solid pure black background (#000000)",
+      "target_garments": ["Black", "Forest Green", "Navy", "Dark Chocolate", "Graphite Heather", "Heather Maroon"]
+    },
+    "light": {
+      "ink_palette": "Deep holiday forest green and cranberry red linework with antique distressed lettering",
+      "background": "Solid pure white background (#FFFFFF)",
+      "target_garments": ["White", "Natural", "Sand", "Sport Grey", "Light Pink"]
+    },
+    "darli": {
+      "ink_palette": "Multi-tone festive graphic with clean solid border",
+      "background": "Solid pure black background (#000000)",
+      "target_garments": ["Black", "Forest Green", "Navy", "White", "Sand"]
+    }
+  },
+  "typographic_rules": {
+    "header": "Gracefully arched above in bold vintage holiday serif or retro festive script",
+    "footer": "Boldly anchored below with classic holiday banners or distressed typography",
+    "letter_fills": "Crisp solid legible fills, readable on mobile in 0.5 seconds"
+  },
+  "core_tropes": [
+    {
+      "trope_name": "Vintage Cool Santa & Retro Holiday",
+      "quote_options": [
+        {"header": "MERRY", "footer": "CHRISTMAS"},
+        {"header": "KRINGLE", "footer": "CLUB"},
+        {"header": "HO HO", "footer": "HOLY JOLLY"}
+      ],
+      "motifs": [
+        "Vintage Santa Claus with festive sunglasses and holly wreath",
+        "Classic 1950s red pickup truck carrying a freshly cut pine Christmas tree",
+        "Vintage holiday bell with pine cones and evergreen branches"
+      ]
+    },
+    {
+      "trope_name": "Humorous & Relatable Christmas Sayings",
+      "quote_options": [
+        {"header": "DEAR SANTA", "footer": "I CAN EXPLAIN"},
+        {"header": "MOST LIKELY TO", "footer": "SPILL THE EGGNOG"},
+        {"header": "ONLY A MORNING PERSON", "footer": "ON DEC 25TH"},
+        {"header": "BEGINNING TO COST", "footer": "A LOT LIKE CHRISTMAS"}
+      ],
+      "motifs": [
+        "Santa Claus holding a list with a cheeky wink",
+        "Spilled festive eggnog mug with gingerbread cookies",
+        "Empty holiday shopping wallet surrounded by Christmas lights"
+      ]
+    },
+    {
+      "trope_name": "Cozy Holiday Movie & Winter Nesting",
+      "quote_options": [
+        {"header": "THIS IS MY", "footer": "CHRISTMAS MOVIE SHIRT"},
+        {"header": "COZY NOEL", "footer": "WINTER CLUB"},
+        {"header": "HOT COCOA &", "footer": "HALLMARK MOVIES"}
+      ],
+      "motifs": [
+        "Steaming mug of hot chocolate with marshmallows and candy cane",
+        "Cozy snow-covered mountain cabin with glowing windows and smoke",
+        "Stack of holiday books wrapped with a red ribbon and evergreen sprig"
+      ]
+    }
+  ]
+}

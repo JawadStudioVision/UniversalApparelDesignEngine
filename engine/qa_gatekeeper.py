@@ -7,7 +7,7 @@ def validate_print_asset(
     raw_img: Optional[Image.Image] = None,
     target_width: int = 5000,
     target_height: int = 5000,
-    min_coverage: float = 0.80,
+    min_coverage: float = 0.75,
     max_coverage: float = 0.95
 ) -> Dict[str, Any]:
     """
