@@ -1,0 +1,38 @@
+{
+  "niche_id": "fitness",
+  "niche_name": "Iron Culture & Stoic Strength",
+  "brand_name": "Iron & Stoic",
+  "brand_tagline": "Discipline Over Motivation",
+  "visual_style": "High-contrast vintage anatomical etching, bold woodblock engraving, gritty chalk textures, zero airbrush gradients",
+  "colorways": {
+    "light": {
+      "ink_palette": "Matte charcoal black with subtle iron oxide rust red accents",
+      "background": "Solid pure white background (#FFFFFF)",
+      "target_garments": ["White", "Natural", "Sand", "Sport Grey"]
+    },
+    "dark": {
+      "ink_palette": "Luminous weathered chalk white linework",
+      "background": "Solid pure black background (#000000)",
+      "target_garments": ["Black", "Graphite Heather", "Navy"]
+    }
+  },
+  "typographic_rules": {
+    "header": "Bold condensed arched vintage athletic serif",
+    "footer": "Heavy industrial sans-serif baseline",
+    "letter_fills": "Solid bold fills with sharp kerning"
+  },
+  "core_tropes": [
+    {
+      "trope_name": "Relentless Consistency",
+      "quote_options": [
+        {"header": "SUFFER THE WORK", "footer": "ENJOY THE WEIGHT"},
+        {"header": "EARNED NOT GIVEN", "footer": "DAILY TRIBUTE"}
+      ],
+      "motifs": [
+        "A stoic Spartan helmet framed by weathered laurel branches",
+        "A heavily textured vintage iron anvil with sparks in negative space",
+        "A muscular silverback gorilla in contemplative philosopher pose"
+      ]
+    }
+  ]
+}

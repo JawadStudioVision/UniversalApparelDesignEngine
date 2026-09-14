@@ -1,0 +1,28 @@
+# Environment & Credentials
+.env
+.env.local
+
+# Python Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# Large Generation Output Artifacts
+exports/
+data/raw_cache/
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,57 @@
+{
+  "niche_id": "romance",
+  "niche_name": "Slow Burn Romance & Literary Readers",
+  "brand_name": "The Yearning Club",
+  "brand_tagline": "Soft Shirts for Slow Burns",
+  "visual_style": "19th-century storybook woodcut engraving, razor-sharp cross-hatching, fine editorial book etching, zero digital airbrush gradients",
+  "colorways": {
+    "light": {
+      "ink_palette": "Deep charcoal black with rich antique dark forest green ink accents",
+      "background": "Solid pure white background (#FFFFFF)",
+      "target_garments": ["White", "Natural", "Sand", "Light Pink", "Sport Grey", "Sage", "Heather Irish Green"]
+    },
+    "dark": {
+      "ink_palette": "Luminous warm ivory bone cream linework",
+      "background": "Solid pure black background (#000000)",
+      "target_garments": ["Black", "Navy", "Graphite Heather", "Dark Chocolate", "Heather Maroon", "Forest Green", "Heather Purple"]
+    },
+    "darli": {
+      "ink_palette": "Dual-tone high contrast linework with solid bookend border",
+      "background": "Solid pure white background (#FFFFFF) with transparent boundary",
+      "target_garments": ["Black", "White", "Navy", "Sand", "Natural", "Sport Grey", "Forest Green"]
+    }
+  },
+  "typographic_rules": {
+    "header": "Gracefully arched above in bold vintage editorial book serif with solid letter fills",
+    "footer": "Boldly anchored below in an aligned horizontal baseline with delicate bookend rules and baroque filigree flourish",
+    "letter_fills": "Strictly solid fills, never hatched, distressed, or degraded letter bodies"
+  },
+  "core_tropes": [
+    {
+      "trope_name": "Micro-Distance Tension / The Almost Moment",
+      "quote_options": [
+        {"header": "ALMOST IS", "footer": "MY FAVORITE PART"},
+        {"header": "TENSION FIRST", "footer": "KISSES LATER"},
+        {"header": "THE ACHE WAS", "footer": "NECESSARY"}
+      ],
+      "motifs": [
+        "Two swallows perched intimately close on a bare winter branch with an exact 1mm gap between beaks",
+        "Two outstretched hands reaching towards each other with fingertips 1mm apart",
+        "Two deer facing each other in misty negative space"
+      ]
+    },
+    {
+      "trope_name": "Composure Loss / One Glance",
+      "quote_options": [
+        {"header": "ONE GLANCE.", "footer": "ZERO COMPOSURE."},
+        {"header": "BUILT FOR", "footer": "THE LONGING"},
+        {"header": "SOFT FOR", "footer": "ONLY ONE"}
+      ],
+      "motifs": [
+        "A proud noble rabbit looking back over shoulder with poised composure",
+        "A poised barn owl with intense focused gaze",
+        "A delicate porcelain teacup overflowing with floral vines"
+      ]
+    }
+  ]
+}
