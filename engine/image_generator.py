@@ -34,9 +34,11 @@ class ImageGenerationEngine:
 
         target_dir = Path(output_dir) if output_dir else settings.EXPORTS_DIR
         target_dir.mkdir(parents=True, exist_ok=True)
+        raw_dir = target_dir / "RAW"
+        raw_dir.mkdir(parents=True, exist_ok=True)
 
         filename_base = f"{title} - {code} - {tone}"
-        raw_path = target_dir / f"{filename_base}_Raw.png"
+        raw_path = raw_dir / f"{filename_base}_Raw.png"
         final_5000_path = target_dir / f"{filename_base}.png"
 
         headers = {
@@ -68,6 +70,10 @@ class ImageGenerationEngine:
 
         with urllib.request.urlopen(req, timeout=120) as resp:
             data = json.loads(resp.read().decode("utf-8"))
+
+        # Save debug JSON in system data directory, not designs folder
+        with open(settings.DATA_DIR / "last_api_response.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
 
         choices = data.get("choices", [])
         if not choices:
