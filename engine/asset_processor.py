@@ -44,12 +44,15 @@ def process_apparel_graphic(
     target_width: int = 5000,
     target_height: int = 5000,
     dpi: int = 300,
-    bg_color: str = "auto"
+    bg_color: str = "auto",
+    method: str = "auto"
 ) -> str:
     """
     Takes a raw generated graphic, extracts high-precision transparency,
     upscales typography and illustration to 5000x5000 at 300 DPI (occupying 90% printable chest area),
     and validates through the Pre-Flight QA Gatekeeper before saving.
+    
+    method: 'color_to_alpha', 'rembg', or 'auto' (selects color_to_alpha for solid white/black, rembg for textured/colored/checkerboard)
     """
     input_p = Path(input_path)
     output_p = Path(output_path)
@@ -60,20 +63,36 @@ def process_apparel_graphic(
     print(f"[Processor] Opening raw image: {input_p.name}...")
     img = Image.open(input_p)
 
-    # 1. Determine background color if auto
+    # 1. Determine background and extraction method
+    corners = [
+        img.getpixel((0, 0)),
+        img.getpixel((img.width - 1, 0)),
+        img.getpixel((0, img.height - 1)),
+        img.getpixel((img.width - 1, img.height - 1))
+    ]
+    avg_brightness = sum(sum(c[:3]) / 3 for c in corners) / 4
     if bg_color == "auto":
-        corners = [
-            img.getpixel((0, 0)),
-            img.getpixel((img.width - 1, 0)),
-            img.getpixel((0, img.height - 1)),
-            img.getpixel((img.width - 1, img.height - 1))
-        ]
-        avg_brightness = sum(sum(c[:3]) / 3 for c in corners) / 4
         bg_color = "white" if avg_brightness > 128 else "black"
-        print(f"[Processor] Detected background: {bg_color.upper()}")
 
-    # 2. Extract Transparency using Vector/Color-to-Alpha (Preserves 100% Typography)
-    transparent_img = extract_transparent_background(img, bg_color=bg_color)
+    chosen_method = method
+    if chosen_method == "auto":
+        # Check corner pixel variance to identify textured/checkerboard vs pure solid
+        corner_arr = np.array([c[:3] for c in corners], dtype=float)
+        corner_std = np.mean(np.std(corner_arr, axis=0))
+        # Solid white (>245) or solid black (<15) with low variance
+        if corner_std < 10.0 and (avg_brightness > 245 or avg_brightness < 15):
+            chosen_method = "color_to_alpha"
+        else:
+            chosen_method = "rembg"
+
+    print(f"[Processor] Selected method: {chosen_method.upper()} (bg: {bg_color.upper()}, brightness: {avg_brightness:.1f})")
+
+    # 2. Extract Transparency
+    if chosen_method == "rembg":
+        import rembg
+        transparent_img = rembg.remove(img)
+    else:
+        transparent_img = extract_transparent_background(img, bg_color=bg_color)
 
     # 3. Auto-crop to content bounding box
     bbox = transparent_img.getbbox()
