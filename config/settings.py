@@ -27,7 +27,7 @@ class Settings:
 
     # API Configurations
     OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
-    DEFAULT_MODEL: str = os.getenv("DEFAULT_IMAGE_MODEL", "openai/gpt-5.4-image-2")
+    DEFAULT_MODEL: str = os.getenv("DEFAULT_IMAGE_MODEL", "openai/gpt-5-image-mini")
     OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1/chat/completions"
 
     # Apparel Resolution & DPI Standards
