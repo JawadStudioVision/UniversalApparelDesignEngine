@@ -4,11 +4,11 @@ from PIL import Image
 import numpy as np
 from .qa_gatekeeper import validate_print_asset
 
-def extract_transparent_background(img: Image.Image, bg_color: str = "white", t_low: float = 8.0, t_high: 32.0 = 32.0) -> Image.Image:
+def extract_transparent_background(img: Image.Image, bg_color: str = "white", t_low: float = 12.0, t_high: float = 36.0) -> Image.Image:
     """
     High-precision mathematical Color-to-Alpha unmixing for apparel graphics.
     Eliminates solid backgrounds without destroying typography, filigree, or line art,
-    and unmixes edge pixels to prevent white/black halo fringe on shirts.
+    filters subtle JPEG border compression artifacts, and unmixes edge pixels to prevent halo fringe.
     """
     img_rgb = img.convert("RGB")
     arr = np.array(img_rgb, dtype=float)
@@ -25,8 +25,9 @@ def extract_transparent_background(img: Image.Image, bg_color: str = "white", t_
     # 2. Compute Euclidean distance from background color
     dist = np.sqrt(np.sum((arr - bg_est)**2, axis=2))
 
-    # 3. Calculate smooth anti-aliased alpha
+    # 3. Calculate smooth anti-aliased alpha and filter sub-5% JPEG noise
     alpha = np.clip((dist - t_low) / (t_high - t_low), 0.0, 1.0)
+    alpha = np.where(alpha < 0.05, 0.0, alpha)
 
     # 4. De-fringe / unmix RGB foreground from background
     alpha_expanded = alpha[:, :, np.newaxis]
