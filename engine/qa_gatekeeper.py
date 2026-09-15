@@ -84,8 +84,8 @@ def validate_print_asset(
             trans_top_span = float(np.min(trans_y_indices) / target_height)
             trans_bottom_span = float(np.max(trans_y_indices) / target_height)
 
-            top_preserved = bool((trans_top_span <= 0.15) if (raw_top_span <= 0.15) else True)
-            bottom_preserved = bool((trans_bottom_span >= 0.85) if (raw_bottom_span >= 0.85) else True)
+            top_preserved = bool((trans_top_span <= 0.20) if (raw_top_span <= 0.20) else True)
+            bottom_preserved = bool((trans_bottom_span >= 0.80) if (raw_bottom_span >= 0.80) else True)
             preservation_ok = bool(top_preserved and bottom_preserved)
             report["checks"]["typography_preservation"] = {
                 "passed": preservation_ok,
