@@ -8,17 +8,41 @@
     "light": {
       "ink_palette": "Deep charcoal black with rich antique dark forest green ink accents",
       "background": "Solid pure white background (#FFFFFF)",
-      "target_garments": ["White", "Natural", "Sand", "Light Pink", "Sport Grey", "Sage", "Heather Irish Green"]
+      "target_garments": [
+        "White",
+        "Natural",
+        "Sand",
+        "Light Pink",
+        "Sport Grey",
+        "Sage",
+        "Heather Irish Green"
+      ]
     },
     "dark": {
       "ink_palette": "Luminous warm ivory bone cream linework",
       "background": "Solid pure black background (#000000)",
-      "target_garments": ["Black", "Navy", "Graphite Heather", "Dark Chocolate", "Heather Maroon", "Forest Green", "Heather Purple"]
+      "target_garments": [
+        "Black",
+        "Navy",
+        "Graphite Heather",
+        "Dark Chocolate",
+        "Heather Maroon",
+        "Forest Green",
+        "Heather Purple"
+      ]
     },
     "darli": {
       "ink_palette": "Dual-tone high contrast linework with solid bookend border",
       "background": "Solid pure white background (#FFFFFF) with transparent boundary",
-      "target_garments": ["Black", "White", "Navy", "Sand", "Natural", "Sport Grey", "Forest Green"]
+      "target_garments": [
+        "Black",
+        "White",
+        "Navy",
+        "Sand",
+        "Natural",
+        "Sport Grey",
+        "Forest Green"
+      ]
     }
   },
   "typographic_rules": {
@@ -30,9 +54,18 @@
     {
       "trope_name": "Micro-Distance Tension / The Almost Moment",
       "quote_options": [
-        {"header": "ALMOST IS", "footer": "MY FAVORITE PART"},
-        {"header": "TENSION FIRST", "footer": "KISSES LATER"},
-        {"header": "THE ACHE WAS", "footer": "NECESSARY"}
+        {
+          "header": "ALMOST IS",
+          "footer": "MY FAVORITE PART"
+        },
+        {
+          "header": "TENSION FIRST",
+          "footer": "KISSES LATER"
+        },
+        {
+          "header": "THE ACHE WAS",
+          "footer": "NECESSARY"
+        }
       ],
       "motifs": [
         "Two swallows perched intimately close on a bare winter branch with an exact 1mm gap between beaks",
@@ -43,18 +76,120 @@
     {
       "trope_name": "Composure Loss / One Glance",
       "quote_options": [
-        {"header": "ONE GLANCE.", "footer": "ZERO COMPOSURE."},
-        {"header": "BUILT FOR", "footer": "THE LONGING"},
-        {"header": "SOFT FOR", "footer": "ONLY ONE"}
+        {
+          "header": "ONE GLANCE.",
+          "footer": "ZERO COMPOSURE."
+        },
+        {
+          "header": "BUILT FOR",
+          "footer": "THE LONGING"
+        },
+        {
+          "header": "SOFT FOR",
+          "footer": "ONLY ONE"
+        }
       ],
       "motifs": [
         "A proud noble rabbit looking back over shoulder with poised composure",
         "A poised barn owl with intense focused gaze",
         "A delicate porcelain teacup overflowing with floral vines"
       ]
+    },
+    {
+      "trope_name": "Luminous Swans & North Star (Ethereal Devotion)",
+      "quote_options": [
+        {
+          "header": "TWO SOULS ALIGNED",
+          "footer": "UNDER ONE STAR"
+        },
+        {
+          "header": "MY CONSTANT NORTH",
+          "footer": "GUIDED TO YOU"
+        },
+        {
+          "header": "ETERNAL YEARNING",
+          "footer": "ONE HEARTBEAT"
+        }
+      ],
+      "motifs": [
+        "Two ethereal luminous white swans facing each other forming a heart silhouette on dark rippling water beneath a radiant North Star",
+        "Two white cranes intertwined in mid-flight encircled by starlight dust"
+      ]
+    },
+    {
+      "trope_name": "Vintage Record & Melody Ribbon (Unspoken Song)",
+      "quote_options": [
+        {
+          "header": "PLAY OUR SONG",
+          "footer": "WHERE WORDS FAIL"
+        },
+        {
+          "header": "EVERY LOVE SONG",
+          "footer": "LEADS TO YOU"
+        },
+        {
+          "header": "SPINNING FOREVER",
+          "footer": "IN YOUR ORBIT"
+        }
+      ],
+      "motifs": [
+        "An antique vinyl turntable where the needle traces a glowing starlight ribbon spiraling into a brilliant celestial star",
+        "An open vintage music box with floating golden musical notes and blooming wild roses"
+      ]
+    },
+    {
+      "trope_name": "Circular Botanical Wreath (Protected Sanctuary)",
+      "quote_options": [
+        {
+          "header": "IN THIS CHAPTER",
+          "footer": "I CHOOSE YOU"
+        },
+        {
+          "header": "SAFE IN YOUR ORBIT",
+          "footer": "MY WHOLE WORLD"
+        },
+        {
+          "header": "WRITTEN IN WONDERS",
+          "footer": "BOUND TO YOU"
+        }
+      ],
+      "motifs": [
+        "A circular botanical wreath of wild climbing roses and ivy framing an open hardcover book with a golden star bookmark",
+        "An arched laurel wreath enclosing two gentle hands with fingertips meeting in quiet starlight"
+      ]
     }
   ],
   "forbidden_themes": [
-    "violence", "burn", "burning", "fire", "dagger", "sword", "weapon", "blood", "kill", "destroy", "aggression", "war"
-  ]
+    "violence",
+    "burn",
+    "burning",
+    "fire",
+    "dagger",
+    "sword",
+    "weapon",
+    "blood",
+    "kill",
+    "destroy",
+    "aggression",
+    "war"
+  ],
+  "reference_inspiration_dir": "C:\\Users\\AI Factorz\\Documents\\Printify Popup Store\\Christmas\\Designs\\raw_backup",
+  "user_favorite_style_pillars": {
+    "pillar_1_botanical_wreath_enclosure": {
+      "description": "Circular or arched botanical laurel and rose wreaths encircling self-contained artwork, eliminating empty space.",
+      "inspiration": "User Christmas wreaths (e.g. christmas_mug_warm_wishes, Designer.png)"
+    },
+    "pillar_2_dual_font_lockup": {
+      "description": "Multi-tier typographic hierarchy: bold vintage serif arched top, fluid romantic script or clean slab baseline, flanked by bookend dashes and floral flourishes (\u2014 WORD \u2014).",
+      "inspiration": "User Christmas typography lockups (e.g. Designer.png Wonderful Time, Fueled By Christmas Coffee)"
+    },
+    "pillar_3_luminous_ethereal_filament": {
+      "description": "Fine ethereal glowing filament linework on pitch-black backgrounds with radiant North Star and celestial light trails.",
+      "inspiration": "User glowing twin swans under star (ChatGPT Image 04_55_31 AM), turntable starlight ribbon"
+    },
+    "pillar_4_cozy_storybook_warmth": {
+      "description": "Tactile storybook crosshatching, open books with star bookmarks, steaming vintage ceramic cups with subtle heart steam.",
+      "inspiration": "User storybook illustrations (04_light_came_near, 05_01_25 AM, 03_58_52 AM)"
+    }
+  }
 }
