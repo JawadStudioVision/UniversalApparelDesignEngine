@@ -5,19 +5,21 @@
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
 [![POD Ready: 5000x5000 300DPI](https://img.shields.io/badge/Output-5000x5000_300_DPI-orange.svg)]()
 [![QA: Gatekeeper Protected](https://img.shields.io/badge/QA_Gate-Strict_Pre--Flight-success.svg)]()
+[![Catalog: 125 Live Designs](https://img.shields.io/badge/Catalog-125_Designs_Live-brightgreen.svg)]()
 
 ---
 
 ## 🚀 Overview
 
-The **Universal Apparel Design Engine (UADE)** is a production-grade framework designed to autonomously research, generate, process, and validate commercial-grade apparel graphics for Direct-to-Garment (DTG) and screen printing.
+The **Universal Apparel Design Engine (UADE)** is a production-grade framework designed to autonomously research, process, and validate commercial-grade apparel graphics for Direct-to-Garment (DTG) and screen printing.
 
 Unlike generic image-generation scripts that produce uncalibrated or unusable artwork, UADE guarantees:
 1. **Zero Typography Loss:** Eliminates photographic AI background removers (like U2Net/rembg) in favor of **Mathematical Color-to-Alpha Unmixing**, preserving 100% of fine fonts, stars, and filigree.
 2. **True 5000×5000 px @ 300 DPI Canvas:** Automatic Lanczos upscaling to 85–90% chest fill.
 3. **Automated Pre-Flight Quality Assurance:** Rejects undersized, clipped, or halo-fringed assets before they reach your storefront.
-4. **Closed-Loop Commercial Feedback:** Mines live sales velocity from Shopify and Printify to double down on 2–3 month bestsellers and prune 1-year zero-sale dead stock.
-5. **Universal Niche Portability:** Switch from Slow-Burn Romance to Gym/Fitness, Coffee, or Cyberpunk simply by selecting a JSON configuration file.
+4. **Manual & Hybrid Creator Workflow:** Supports 100% creator-guided manual design ingestion (`DesignedImages/New Designs 2`) with automated zero-cost local post-processing.
+5. **Multi-Agent Staging Pipeline:** Automates archiving to `RAW/`, staging to `AutomatThroughAPIKey/`, and cataloging in `UsedOnWebsite/` (125 live designs).
+6. **Strict Non-Violence Brand Policy:** Zero weapons, zero blood, zero toxicity; pure emotional and literary resonance.
 
 ---
 
@@ -25,28 +27,23 @@ Unlike generic image-generation scripts that produce uncalibrated or unusable ar
 
 ```mermaid
 graph TD
-    A[Niche Configuration JSON] --> B[Self-Prompt Improvement System - SPIS]
-    B -->|Score >= 9.8/10| C[OpenRouter / LLM Generation Engine]
-    B -->|Score < 9.8| B
-    C --> D[Vector Color-to-Alpha Processor]
-    D --> E[Lanczos 5000x5000 @ 300 DPI Upscaler]
-    E --> F[Pre-Flight QA Gatekeeper]
-    F -->|All Checks PASS| G[Master Print Asset: Title - Code - Tone.png]
-    F -->|Any Check FAILS| H[Self-Healing Recovery Halt]
-    G --> I[Printify / Shopify Publishing]
-    I --> J[Commercial Lifecycle Miner]
-    J -->|60-90 Days: Winners| K[Winner Expansion Briefs]
-    J -->|365 Days: Zero Sales| L[Negative Prompt Blacklist]
-    K --> B
-    L --> B
+    A[Creator Art Drop / Niche Config] --> B[Color-to-Alpha Unmixing Engine]
+    B --> C[Lanczos 5000x5000 @ 300 DPI Upscaler]
+    C --> D[Pre-Flight QA Gatekeeper]
+    D -->|All Checks PASS| E[Master Print Asset: Title - Code - Tone.png]
+    D -->|Any Check FAILS| F[Self-Healing Recovery Halt]
+    E --> G[Raw to RAW/ & Master to AutomatThroughAPIKey/]
+    G --> H[Web Agent Publishes to Shopify & Printify]
+    H --> I[Moved to UsedOnWebsite/ - 125 Live Designs]
+    I --> J[Commercial Lifecycle Miner: Bestsellers vs Deadstock]
 ```
 
 ---
 
 ## 📦 Key Pillars
 
-### 1. Self-Prompt Improvement System (SPIS)
-Pre-evaluates candidate prompts against commercial apparel criteria (Rule of One, arched header, horizontal baseline, solid font fills, storybook woodcut engraving, clean negative space, and explicit omission of t-shirt mockups or human models). Automatically refines prompts until they achieve $\ge 9.8/10$.
+### 1. Manual Creation & Local Ingestion Workflow
+Creators drop high-resolution raw designs into `DesignedImages/New Designs 2`. The local Python pipeline handles background unmixing, resolution density tagging (300 DPI), canvas centering, and quality assurance without third-party API costs.
 
 ### 2. Mathematical Color-to-Alpha Unmixing
 Photographic segmentation models treat surrounding typography as "background clutter." UADE solves this using vectorized Color-to-Alpha de-fringing:
@@ -61,94 +58,32 @@ Every single asset is programmatically inspected before saving:
 - **Perimeter Transparency:** Outer 15px border alpha must strictly equal `0`.
 - **Typography Span Preservation:** Compares raw vs processed vertical content span to guarantee text banners were not excised.
 
-### 4. Commercial Sales Feedback Loop
-Mines live order fulfillment data from **Shopify Admin API** and **Printify Orders API**:
-- **2–3 Month Horizon:** Detects top-velocity bestsellers and extracts their creative DNA to generate companion designs.
-- **1-Year Horizon:** Flags zero-sale dead stock for Shopify deactivation and blacklists those tropes in the SPIS prompt engine.
-
----
-
-## 🛠️ Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/JawadStudioVision/UniversalApparelDesignEngine.git
-cd UniversalApparelDesignEngine
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Configure environment variables
-cp .env.example .env
-```
+### 4. Style Reference Mining
+Extracts aesthetic pillars from reference design archives:
+- Circular botanical wreath / arch badge enclosures
+- Multi-tier typography with bookend dashes (`— PHRASE —`)
+- Luminous filament linework and starlight ribbons
+- Storybook crosshatch and warm reading textures
 
 ---
 
 ## 🚦 Quickstart & CLI Usage
 
-### 1. Generate a Master Print Asset
-```bash
-python main.py generate \
-  --niche romance \
-  --subject "Two swallows perched intimately close on a bare winter branch with 1mm beak gap" \
-  --header "ALMOST IS" \
-  --footer "MY FAVORITE PART" \
-  --title "Almost Favorite Part" \
-  --code "TG01" \
-  --tone "light"
-```
-
-### 2. Process an Existing Raw Graphic
+### 1. Process an Existing Raw Graphic (Local & Free)
 ```bash
 python main.py process \
   --input "raw_art.png" \
-  --output "exports/Favorite Part - TG01 - light.png"
+  --output "exports/Favorite Part - TG126 - Light.png"
 ```
 
-### 3. Run Pre-Flight QA Gatekeeper on an Asset
+### 2. Run Pre-Flight QA Gatekeeper on an Asset
 ```bash
-python main.py qa --file "exports/Favorite Part - TG01 - light.png"
+python main.py qa --file "exports/Favorite Part - TG126 - Light.png"
 ```
 
-### 4. Run Commercial Sales Audit
+### 3. Run Commercial Sales Audit
 ```bash
 python main.py sales-audit
-```
-
----
-
-## 🎨 Adding a New Niche
-
-Creating a new brand niche requires only a single JSON file in `config/niches/<niche_id>.json`:
-
-```json
-{
-  "niche_id": "coffee",
-  "niche_name": "Artisanal Coffee & Morning Rituals",
-  "visual_style": "Vintage botanical etching with fine cross-hatching",
-  "colorways": {
-    "light": {
-      "ink_palette": "Deep espresso brown with roasted hazelnut accents",
-      "background": "Solid pure white background (#FFFFFF)"
-    },
-    "dark": {
-      "ink_palette": "Luminous oat milk cream linework",
-      "background": "Solid pure black background (#000000)"
-    }
-  }
-}
-```
-
----
-
-## 🧪 Running Unit Tests
-
-```bash
-python tests/test_universal_pipeline.py
 ```
 
 ---
